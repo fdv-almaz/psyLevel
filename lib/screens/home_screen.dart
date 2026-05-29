@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'input_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -10,6 +11,16 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('psyLevel'),
         elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.exit_to_app),
+          onPressed: () {
+            Navigator.of(context).popUntil((route) => route.isFirst);
+            Future.delayed(const Duration(milliseconds: 100), () {
+              SystemNavigator.pop();
+            });
+          },
+          tooltip: 'Выход',
+        ),
       ),
       body: Center(
         child: Padding(

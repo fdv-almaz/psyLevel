@@ -22,28 +22,28 @@ class StressCalculator {
 
   /// Returns a stress level interpretation
   static String getStressInterpretation(double stressLevel) {
-    if (stressLevel < 20) {
+    if (stressLevel < 0) {
+      return 'КРИТИЧЕСКИ ВЫСОКИЙ СТРЕСС\n⚠️ Требуется медицинская помощь';
+    } else if (stressLevel < 25) {
       return 'Низкий уровень стресса';
-    } else if (stressLevel < 40) {
-      return 'Умеренный уровень стресса';
-    } else if (stressLevel < 60) {
+    } else if (stressLevel < 50) {
       return 'Средний уровень стресса';
-    } else if (stressLevel < 80) {
+    } else if (stressLevel < 75) {
       return 'Высокий уровень стресса';
     } else {
-      return 'Очень высокий уровень стресса';
+      return 'КРИТИЧЕСКИЙ УРОВЕНЬ СТРЕССА\n🚨 Требуется срочная помощь';
     }
   }
 
   /// Returns a color representation of stress level
   static int getStressColor(double stressLevel) {
-    if (stressLevel < 20) {
+    if (stressLevel < 0) {
+      return 0xFFD32F2F; // Dark Red
+    } else if (stressLevel < 25) {
       return 0xFF4CAF50; // Green
-    } else if (stressLevel < 40) {
-      return 0xFF8BC34A; // Light Green
-    } else if (stressLevel < 60) {
+    } else if (stressLevel < 50) {
       return 0xFFFFC107; // Amber
-    } else if (stressLevel < 80) {
+    } else if (stressLevel < 75) {
       return 0xFFFF9800; // Orange
     } else {
       return 0xFFF44336; // Red

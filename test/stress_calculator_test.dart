@@ -29,9 +29,19 @@ void main() {
       expect(interpretation, 'Низкий уровень стресса');
     });
 
+    test('getStressInterpretation for medium stress', () {
+      final interpretation = StressCalculator.getStressInterpretation(40);
+      expect(interpretation, 'Средний уровень стресса');
+    });
+
     test('getStressInterpretation for high stress', () {
+      final interpretation = StressCalculator.getStressInterpretation(65);
+      expect(interpretation, 'Высокий уровень стресса');
+    });
+
+    test('getStressInterpretation for critical stress', () {
       final interpretation = StressCalculator.getStressInterpretation(85);
-      expect(interpretation, 'Очень высокий уровень стресса');
+      expect(interpretation.contains('КРИТИЧЕСКИЙ'), true);
     });
 
     test('HealthMetrics.calculateStress', () {

@@ -19,6 +19,11 @@ class ResultsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Результаты'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+          tooltip: 'Назад',
+        ),
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -106,7 +111,7 @@ class ResultsScreen extends StatelessWidget {
               const SizedBox(height: 48),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).popUntil((route) => route.isFirst);
+                  Navigator.of(context).pop();
                 },
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(
@@ -114,7 +119,7 @@ class ResultsScreen extends StatelessWidget {
                     vertical: 16,
                   ),
                 ),
-                child: const Text('Вернуться в главное меню'),
+                child: const Text('Новое измерение'),
               ),
             ],
           ),

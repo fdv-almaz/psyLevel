@@ -76,6 +76,11 @@ class _InputScreenState extends State<InputScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Ввод данных'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+          tooltip: 'Назад',
+        ),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(24.0),
